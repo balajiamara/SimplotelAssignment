@@ -1,0 +1,491 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+ background: #f0d67a;
+background: linear-gradient(90deg,rgba(240, 214, 122, 1) 0%, rgba(245, 157, 237, 1) 100%);
+}
+
+.menu-bar{      /* image */
+    width: 70px;
+}
+
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(249, 105, 105);
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: x-large;
+    font-weight: 800;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+label {
+    display: none;
+}
+
+.first{
+    display: flex;
+}
+
+.left{
+    width: 50%;
+    padding-top: 90px;
+    padding-left: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.first h1{
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+
+.first pre{
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.first button{
+    width: 180px;
+    height: 50px;
+    border-style: none;
+    color: white;
+    background-color: rgb(249, 105, 105);
+}
+
+.right{
+    width: 50%;
+}
+
+.burger{
+    width: 100%;
+    height: 95vh;
+    object-fit: cover;
+} 
+
+/* .second{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 100px;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.left_s{
+    display: grid;
+    grid-template-columns: 230px 230px;
+    gap: 18px;
+}
+
+.left_s img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.left_s img:nth-child(2){
+    grid-row: span 2;
+    height: 418px;
+} */
+
+ .second{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 100px;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.left_s {
+    display: grid;
+    grid-template-areas: 
+      "top-left tall-right"
+      "bottom-left tall-right";
+
+    grid-template-columns: 230px 230px;
+    grid-template-rows: 200px 200px; 
+
+    gap: 18px;
+}
+
+.left_s img{
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+.left_s .img1 {
+    grid-area: top-left;
+}
+
+.left_s .img2 {
+    grid-area: tall-right;
+}
+
+.left_s .img3 {
+    grid-area: bottom-left;
+}
+
+.box{
+    width: 100%;
+    max-width: 470px;
+    height: 250px;
+    background-color: rgb(249, 105, 105);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-left: 40px;
+    margin-left: 20px;
+}
+
+.box h1{
+    font-size: 50px;
+    letter-spacing: 5px;
+    padding-top: 25px;
+}
+
+.right_s{
+    width: 50%;
+}
+
+.right_s h4 {
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.box div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+
+
+/* ===========================
+   Mobile: 0px → 599px
+   Replaces previous mobile media query
+   =========================== */
+
+/* @media only screen and (max-width: 320px) {
+  .first h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .first pre {
+    font-size: 6px;
+  }
+
+} */
+
+@media only screen and (max-width: 599px) {
+
+    nav {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    /* hide menu items by default */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        gap: 15px;
+    }
+
+    /* when checkbox is checked → show menu */
+    #menu-toggle:checked ~ ul {
+        display: flex;
+    }
+
+    /* menu icon becomes visible only on mobile */
+    label {
+        display: block;
+        margin-left: auto;
+        width: 70px;
+    }
+
+    nav ul li img.menu-bar {
+    display: none;
+  }
+
+.first {
+    flex-direction: column-reverse; /* image first (right) then content (left) */
+    align-items: stretch;
+    padding: 20px 16px;
+    gap: 20px;
+    min-height: auto;
+  }
+
+  .right {
+    width: 100%;
+    padding: 6px 12px 0 12px;
+  }
+
+.burger {
+    width: 100%;
+    height: auto;
+    max-height: 45vh;  /* keeps image visible without dominating */
+    object-fit: cover;
+  }
+
+  .left {
+    width: 100%;
+    padding: 18px 12px 28px 12px;
+    gap: 20px;
+  }
+
+  .first h1 {
+    font-size: 23px;
+    letter-spacing: 2px;
+  }
+
+  .first pre {
+    font-size: 8px;
+  }
+
+  .first button {
+    width: 120px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .second {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 28px 16px;
+    gap: 28px;
+    min-height: auto;
+  }
+
+  /* Force a simple single-column grid for images */
+  .left_s {
+    display: grid !important;               /* ensure override */
+    grid-template-columns: 1fr !important;  /* one column */
+    grid-auto-rows: auto;                   /* let rows size naturally */
+    grid-template-areas:
+      "img1"
+      "img2"
+      "img3";
+    gap: 80px;
+    width: 100%;
+    max-width: 420px; /* prevents extreme wide on large phones */
+  }
+
+  /* map classes to area names (explicit) */
+  .left_s .img1 { grid-area: img1; }
+  .left_s .img2 { grid-area: img2; }
+  .left_s .img3 { grid-area: img3; }
+
+  /* ensure images fill the cell and remain visible */
+  .left_s img {
+    display: block;
+    width: 100%;
+    height: auto;         /* let image keep aspect ratio */
+    max-height: 260px;    /* prevents extremely tall images; adjust as needed */
+    object-fit: cover;
+    /* border-radius: 12px; */
+  }
+
+  /* Right side (box) flows below images on mobile */
+  .right_s {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .box {
+    max-width: 100%;
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+  }
+
+  .box h4 { font-size: 12px; letter-spacing: 3px; }
+  .box h1 { font-size: 30px; letter-spacing: 2px; }
+  .box p  { font-size: 14px; margin-top: 10px; }
+  .box div{ font-size: 16px; margin-top: 16px; }
+}
+
+
+
+/* =========================================
+   2. Tablet Devices: 600px → 1023px
+   ======================================= */
+
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+
+    nav ul {
+        display: flex;
+    }
+
+    /* hide menu toggle icon on desktop */
+    label {
+        display: none;
+    }
+
+.first {
+    flex-direction: column-reverse; /* image first, then content */
+    align-items: center;
+    padding: 28px 32px;
+    gap: 28px;
+    min-height: auto;
+  }
+
+  .left {
+    width: 100%;
+    padding: 22px 18px;
+    gap: 22px;
+  }
+
+  .right {
+    width: 100%;
+    padding: 6px 18px 0 18px;
+  }
+
+  .burger {
+    width: 100%;
+    max-height: 55vh;
+  }
+
+  .first h1 {
+    font-size: 36px;
+    letter-spacing: 3px;
+  }
+
+  .first pre {
+    font-size: 16px;
+  }
+
+  .first button {
+    width: 170px;
+    height: 48px;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .second {
+    flex-direction: column;
+    gap: 40px;
+    padding: 48px 40px;
+    min-height: auto;
+  }
+
+  .left_s {
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 200px 200px;
+    gap: 14px;
+  }
+
+  .right_s {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .box {
+    max-width: 520px;
+    margin-bottom: 20px;
+  }
+
+  .box h1 {
+    font-size: 40px;
+  }
+
+  .box p {
+    font-size: 15px;
+  }
+
+}
+
+/* =========================================
+   3. Laptop / Desktop: 1024px and above
+   ======================================= */
+
+@media only screen and (min-width: 1024px) {
+
+.left{
+    width: 50%;
+    padding-top: 130px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+/* .first h1{
+    font-size: 40px;
+    letter-spacing: 5px;
+}
+
+.first pre{
+    font-size: 13px;
+    line-height: 1.5;
+} */
+
+/* .burger{
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+} */
+
+/* .first button{
+    width: 180px;
+    height: 50px;
+    border-style: none;
+    color: white;
+    background-color: rgb(249, 105, 105);
+}
+
+  .second {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 100px;
+    gap: 60px;
+  }
+
+  .right_s {
+    width: 50%;
+  } */
+
+  /* .box {
+    max-width: 520px;
+    height: 300px;
+  }
+
+  .box h1{
+    font-size: 30px;
+    letter-spacing: 3px;
+    padding-top: 25px;
+} */
+}
