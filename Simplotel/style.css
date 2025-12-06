@@ -9,7 +9,7 @@ body{
 background: linear-gradient(90deg,rgba(240, 214, 122, 1) 0%, rgba(245, 157, 237, 1) 100%);
 }
 
-.menu-bar{      /* image */
+.menu-bar{     
     width: 70px;
 }
 
@@ -54,10 +54,12 @@ label {
     letter-spacing: 5px;
 }
 
-.first pre{
+.first p{
     font-size: 18px;
     line-height: 1.5;
 }
+
+
 
 .first button{
     width: 180px;
@@ -186,23 +188,13 @@ label {
 
 
 
-/* ===========================
-   Mobile: 0px → 599px
-   Replaces previous mobile media query
-   =========================== */
 
-/* @media only screen and (max-width: 320px) {
-  .first h1 {
-    font-size: 20px;
-    letter-spacing: 2px;
+@media only screen and (max-width: 321px) {
+  .first p{
+    font-size: 10px !important;
   }
 
-  .first pre {
-    font-size: 6px;
-  }
-
-} */
-
+}
 @media only screen and (max-width: 599px) {
 
     nav {
@@ -212,7 +204,6 @@ label {
         padding: 10px 20px;
     }
 
-    /* hide menu items by default */
     nav ul {
         display: none;
         flex-direction: column;
@@ -221,12 +212,18 @@ label {
         gap: 15px;
     }
 
-    /* when checkbox is checked → show menu */
+    .menu-bar{
+      width: 40px;
+    }
+
+    li{
+      font-size: medium;
+    }
+
     #menu-toggle:checked ~ ul {
         display: flex;
     }
 
-    /* menu icon becomes visible only on mobile */
     label {
         display: block;
         margin-left: auto;
@@ -238,7 +235,7 @@ label {
   }
 
 .first {
-    flex-direction: column-reverse; /* image first (right) then content (left) */
+    flex-direction: column-reverse;
     align-items: stretch;
     padding: 20px 16px;
     gap: 20px;
@@ -252,8 +249,10 @@ label {
 
 .burger {
     width: 100%;
+    margin-right: 20px;
+    margin-top: 20px;
     height: auto;
-    max-height: 45vh;  /* keeps image visible without dominating */
+    max-height: 45vh; 
     object-fit: cover;
   }
 
@@ -268,8 +267,8 @@ label {
     letter-spacing: 2px;
   }
 
-  .first pre {
-    font-size: 8px;
+  .first p {
+    font-size: 12px;
   }
 
   .first button {
@@ -287,36 +286,33 @@ label {
     min-height: auto;
   }
 
-  /* Force a simple single-column grid for images */
+ 
   .left_s {
-    display: grid !important;               /* ensure override */
-    grid-template-columns: 1fr !important;  /* one column */
-    grid-auto-rows: auto;                   /* let rows size naturally */
+    display: grid !important;               
+    grid-template-columns: 1fr !important;  
+    grid-auto-rows: auto;                   
     grid-template-areas:
       "img1"
       "img2"
       "img3";
     gap: 80px;
     width: 100%;
-    max-width: 420px; /* prevents extreme wide on large phones */
+    max-width: 420px; 
   }
 
-  /* map classes to area names (explicit) */
+
   .left_s .img1 { grid-area: img1; }
   .left_s .img2 { grid-area: img2; }
   .left_s .img3 { grid-area: img3; }
 
-  /* ensure images fill the cell and remain visible */
   .left_s img {
     display: block;
     width: 100%;
-    height: auto;         /* let image keep aspect ratio */
-    max-height: 260px;    /* prevents extremely tall images; adjust as needed */
+    height: auto;         
+    max-height: 260px;    
     object-fit: cover;
-    /* border-radius: 12px; */
   }
 
-  /* Right side (box) flows below images on mobile */
   .right_s {
     width: 100%;
     display: flex;
@@ -325,9 +321,10 @@ label {
 
   .box {
     max-width: 100%;
-    padding: 18px;
-    border-radius: 14px;
+    padding: 10px;
+    /* border-radius: 14px; */
     margin-bottom: 20px;
+    margin-right: 18px;
   }
 
   .box h4 { font-size: 12px; letter-spacing: 3px; }
@@ -338,23 +335,22 @@ label {
 
 
 
-/* =========================================
-   2. Tablet Devices: 600px → 1023px
-   ======================================= */
+
 
 @media only screen and (min-width: 600px) and (max-width: 1023px) {
 
     nav ul {
         display: flex;
+        font-size: large;
     }
 
-    /* hide menu toggle icon on desktop */
+    
     label {
         display: none;
     }
 
 .first {
-    flex-direction: column-reverse; /* image first, then content */
+    flex-direction: column-reverse;
     align-items: center;
     padding: 28px 32px;
     gap: 28px;
@@ -382,8 +378,8 @@ label {
     letter-spacing: 3px;
   }
 
-  .first pre {
-    font-size: 16px;
+  .first p {
+    font-size: 23px;
   }
 
   .first button {
@@ -427,11 +423,8 @@ label {
 
 }
 
-/* =========================================
-   3. Laptop / Desktop: 1024px and above
-   ======================================= */
 
-@media only screen and (min-width: 1024px) {
+/* @media only screen and (min-width: 1024px) {
 
 .left{
     width: 50%;
@@ -440,7 +433,7 @@ label {
     display: flex;
     flex-direction: column;
     gap: 90px;
-}
+} */
 
 /* .first h1{
     font-size: 40px;
@@ -488,4 +481,43 @@ label {
     letter-spacing: 3px;
     padding-top: 25px;
 } */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .left {
+    width: 50%;
+    padding-top: 110px;    
+    padding-left: 40px;    
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .first h1 {
+    font-size: 44px;
+    letter-spacing: 3px;
+    /* color: blue; */
+  }
+
+  .first p {
+    font-size: 17px;
+    /* padding-right: 10px; */
+    line-height: 1.5;
+  }
+
+  .left_s {
+    grid-template-columns: 200px 340px;
+    grid-template-rows: 180px 180px;
+    gap: 14px;
+  }
+
+  .left_s .img2 { grid-row: span 2; } 
+  .left_s img { width: 100%; height: 100%; object-fit: cover; }
+
+  .box {
+    width: 330px;
+    max-width: 400px;
+    height: 280px;
+    padding-left: 28px;
+  }
+
+  .box h1 { font-size: 35px; letter-spacing: 4px; padding-top: 18px; }
 }
