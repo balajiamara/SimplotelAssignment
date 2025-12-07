@@ -31,6 +31,7 @@ ul{
 
 #menu-toggle {
     display: none;
+    cursor:pointer;
 }
 
 label {
@@ -71,6 +72,7 @@ label {
     border-style: none;
     color: white;
     background-color: rgb(249, 105, 105);
+    cursor: pointer;
 }
 
 .right{
@@ -531,4 +533,5 @@ label {
   }
 
   .box h1 { font-size: 35px; letter-spacing: 4px; padding-top: 18px; }
+
 }
